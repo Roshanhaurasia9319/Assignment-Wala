@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Assignment Wala</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/css/otp.css">
+</head>
+<body>
+  <h1 class="text-center m-4 text-decoration-underline">Place Your Order Now</h1>
+  <div class="info container">
+    <div class="left">
+      <img src="../static/images/form-image.avif" alt="" style="width: 100%; height: auto; max-width: 100%;">
+    </div>
+    <div class="right">
+      <div class="price-info">
+        <input type="text" placeholder="Assignment: 5 Rs/Page" readonly>
+        <input type="text" placeholder="Engineering Graphics: 50 Rs/Sheet" readonly>
+        <h4 class="text-info">We have Send you otp on your register email id!!.
+            <h5 class="text-danger">If not recieve please fill the form once again with correct Email id </h5>
+        </h4>
+      </div>
+      <form action="" method="POST">
+        {% csrf_token %}
+        <input type="email" name="Email" id="Email" placeholder="Enter Your Email Id" required>
+        <input type="number" name="Otp" id="Otp" placeholder="Enter Otp" required>
+        <button class="btn btn-success">Confirm Order</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

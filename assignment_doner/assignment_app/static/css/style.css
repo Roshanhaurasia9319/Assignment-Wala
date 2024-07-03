@@ -1,0 +1,76 @@
+
+    .banner {
+      /* Replace with your desired background image */
+      background: url('../images/assign.avif'); 
+      background-position: center center;
+      background-size: cover; /* Cover the entire .banner area */
+      background-repeat: no-repeat;
+      height: 100vh; /* Adjust the height as needed */
+    }
+
+    .black-banner {
+      background-position: center;
+      background-size: cover; /* Cover the entire .banner area */
+      background-repeat: no-repeat;
+      height: 90vh; /* Adjust the height as needed */
+    }
+
+    .banner-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 1rem;
+      height: 100%;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .banner-content h1 {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .banner-content p {
+      font-family: fantasy;
+    }
+
+    .company-goal{
+        background: url(../images/goal.avif);
+        background-position: center;
+        height: 90vh;
+        background-repeat: no-repeat;
+    }
+    .footer {
+      background-color: #343a40;
+      color: white;
+      padding: 40px 0;
+    }
+    .footer a {
+      color: #f8f9fa;
+    }
+    .footer a:hover {
+      color: #adb5bd;
+      text-decoration: none;
+    }
+    .footer .social-icons a {
+      margin: 0 10px;
+    }
+
+    .collapse-transition {
+      transition: height 0.5s ease;
+    }
+    .messages{
+      width: 100vw;
+      height: 4vh;
+    }
+   
+
+    @media (max-width: 768px) {
+      .banner-content {
+        margin: 2rem 1rem;
+      }
+
+      .navbar .logo img {
+        height: 150px;
+        width: 150px;
+      }
+    }
