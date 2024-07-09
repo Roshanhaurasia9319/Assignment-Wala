@@ -9,10 +9,10 @@ from django.contrib import messages
 # Create your views here.
 def index(request):
     images = App_content.objects.all()
-    return render(request, "index.html", {'images': images})
+    return render(request, "assignment_app/index.html", {'images': images})
 
 def about(request):
-    return render(request, "about.html")
+    return render(request, "assignment_app/about.html")
 
 def form(request):
     if request.method == "POST":
@@ -27,7 +27,8 @@ def form(request):
         if Email:
             exist = User_data.objects.filter(Email=Email).exists()
             if exist:
-                return JsonResponse({'exist':exist})
+                messages.success(request, "Email Already Exists")
+                return redirect(form)
             else:
                 otp = generate_otp()
                 cache.set(Email, otp, timeout=600)
@@ -43,7 +44,7 @@ def form(request):
                 }
                 
                 return redirect(reverse('otp'))
-    return render(request, "form.html")
+    return render(request, "assignment_app/form.html")
 
 
 def otp(request):
@@ -74,11 +75,12 @@ def otp(request):
                     'Date': new_customer.Date,
                     'File': new_customer.File
                 }
-                send_confirmation_mail(email, customer_detail)
+                send_confirmation_mail(customer_detail['Email'], customer_detail)
                 del request.session['customer_data']
                 messages.success(request, "Your order is placed successfully kindly check your email")
                 return redirect(index)
         else: 
-            return JsonResponse({'Error':'Invalid otp'})
+            messages.success(request, "Invalid otp")
+            return redirect(otp)
                 
-    return render(request, "otp.html")
+    return render(request, "assignment_app/otp.html")

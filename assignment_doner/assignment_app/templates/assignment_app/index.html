@@ -12,7 +12,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <title>Your Assignment Wala</title>
-  <link rel="stylesheet" href="../static/css/style.css">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'assignment_app/css/style.css' %}">
 </head>
 
 <body>
@@ -86,7 +87,7 @@
 
           </div>
           <div class="logo">
-            <img src="../static/images/logo.png" alt="" height="200" width="200">
+            <img src="{% static 'assignment_app/images/logo.png' %}" alt="" height="200" width="200">
           </div>
         </nav>
       </div>
@@ -127,7 +128,7 @@
       <div class="container mt-4">
         <button data-toggle="collapse" data-target="#assignmentWalaContent" aria-label="Toggle Content"
           style="border: unset;   background-color: rgba(255, 255, 255, 0);">
-          <img src="../static/svg/drop-arrow.svg" alt="">
+          <img src="{% static 'assignment_app/svg/drop-arrow.svg' %}" alt="">
         </button>
         <div id="assignmentWalaContent" class="text-center w-75 collapse collapse-transition mt-3 overflow-scroll"
           style="max-height: 50vh;">
@@ -209,8 +210,8 @@
             <h5 class="text-uppercase">Follow Us</h5>
             <div class="social-icons">
               <a href="https://www.facebook.com/roshan.chaurasia.129"><img src="../static/svg/facebook.svg" alt=""></a>
-              <a href="#"><img src="../static/svg/instagram.svg" alt=""></a>
-              <a href="#"><img src="../static/svg/watsapp.svg" alt=""></a>
+              <a href="#"><img src="{% static 'assignment_app/svg/instagram.svg' %}" alt=""></a>
+              <a href="#"><img src="{% static 'assignment_app/svg/watsapp.svg' %}"></a>
             </div>
           </div>
 
