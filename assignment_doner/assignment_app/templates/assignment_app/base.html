@@ -1,0 +1,157 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'assignment_app/css/style.css' %}">
+    <link rel="icon" href="{%  static 'assignment_app/images/favicon.ico' %}" type="image/x-icon">
+
+    {% block links %}
+    
+    {% endblock links %}
+    <title>Assignment Wala</title>
+
+</head>
+
+<body>
+    {% if messages %}
+    <ul class="messages bg-info text-white">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="navbar mx-0">
+        <nav class="navbar navbar-dark fixed-top mx-0" style="background-color: rgba(255, 255, 255, 0);">
+          <div class="px-5">
+            <button class="navbar-toggler bg-info" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-light" tabindex="-1" id="offcanvasDarkNavbar"
+              aria-labelledby="offcanvasDarkNavbarLabel">
+              <div class="offcanvas-header m-auto">
+                <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"
+                  style="background-color: red;"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a class="nav-link active text-dark" aria-current="page" href="index">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="about">About</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Our Service
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-light">
+                      <li><a class="dropdown-item text-black text-end" href="#assignment">Assignment</a></li>
+                      <li><a class="dropdown-item text-black text-end" href="#EngineeringGraphics">Engineering Graphics
+                          Sheet</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Contact Us
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-light ">
+                      <li class="text-end p-2">Phone No. : 7982527257</li>
+                      <li class="text-end p-2">Email: appt79825@gmail.com</li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <form class="d-flex mt-3" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="logo">
+           <a href="about"> <img src="{% static 'assignment_app/images/logo.png' %}" alt="" height="200" width="200"></a>
+          </div>
+        </nav>
+      </div>
+
+
+    {% block body %}
+
+    {% endblock body %}
+
+    <div class="footer">
+        <!-- Footer -->
+        <footer class="footer text-center text-lg-start">
+            <div class="container">
+                <div class="row">
+                    <!-- Company Info -->
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-center">
+                        <h5 class="text-uppercase">Assignment Wala</h5>
+                        <p>
+                            Helping students with their assignments and engineering graphics drawings. We support those
+                            who are unable
+                            to complete their work due to various personal issues.
+                        </p>
+                    </div>
+                    <!-- Quick Links -->
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index">Home</a></li>
+                            <li><a href="about">About Us</a></li>
+                            <li><a href="#Service">Services</a></li>
+                        </ul>
+                    </div>
+                    <!-- Social Media -->
+                    <div class="col-lg-4 col-md-12 mb-4 mb-md-0 text-center">
+                        <h5 class="text-uppercase">Follow Us</h5>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/roshan.chaurasia.129"><img
+                                    src="{% static 'assignment_app/svg/facebook.svg' %}" alt=""></a>
+                            <a href="#"><img src="{% static 'assignment_app/svg/instagram.svg' %}" alt=""></a>
+                            <a href="#"><img src="{% static 'assignment_app/svg/watsapp.svg' %}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2024 Assignment Wala. All rights reserved.
+            </div>
+        </footer>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+
+{% block scripts %}
+
+{% endblock scripts %}
+
+
+
+</html>
